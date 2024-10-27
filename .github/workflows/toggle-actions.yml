@@ -29,6 +29,6 @@ jobs:
     - name: Run toggle actions script
       run: python toggle_actions.py ${{ github.event.inputs.action }}
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
         OWNER: 'repo_owner'
         REPO: 'repo_name'
