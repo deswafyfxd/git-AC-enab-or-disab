@@ -2,12 +2,10 @@ import requests
 import os
 import sys
 
-# Replace with your token, owner, and repo
 token = os.getenv('MY_GITHUB_TOKEN')
 owner = os.getenv('OWNER')
 repo = os.getenv('REPO')
 
-# Headers for authentication
 headers = {
     'Authorization': f'token {token}',
     'Accept': 'application/vnd.github.v3+json',
