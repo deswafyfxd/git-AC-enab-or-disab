@@ -6,7 +6,7 @@ on:
       action:
         description: 'Enable or Disable GitHub Actions'
         required: true
-        default: 'enable'  # Default action
+        default: 'enable'
 
 jobs:
   toggle-actions:
