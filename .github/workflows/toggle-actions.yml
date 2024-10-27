@@ -1,4 +1,4 @@
-name: Toggle GitHub Actions
+name: Toggle GitHub Actions for Other Repos
 
 on:
   workflow_dispatch:
@@ -7,6 +7,12 @@ on:
         description: 'Enable or Disable GitHub Actions'
         required: true
         default: 'enable'
+      target_owner:
+        description: 'Owner of the target repository'
+        required: true
+      target_repo:
+        description: 'Name of the target repository'
+        required: true
 
 jobs:
   toggle-actions:
@@ -30,5 +36,5 @@ jobs:
       run: python toggle_actions.py ${{ github.event.inputs.action }}
       env:
         MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
-        OWNER: 'owner'
-        REPO: 'repo'
+        OWNER: ${{ github.event.inputs.target_owner }}
+        REPO: ${{ github.event.inputs.target_repo }}
